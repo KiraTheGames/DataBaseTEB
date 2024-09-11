@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedkarstwo zadania bazy danych</title>
+    <style>
+        section{
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fffff5;
+            border-radius: 5px;
+        }
+        section h2{
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-family: math;
+        }
+        section label{
+            display: block;
+            margin-bottom: 10px;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        section textarea{
+            min-height: 150px;
+            width: 99%;
+            padding: 10px;
+            font-size: 16px;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        section input{
+            width: 99%;
+            padding: 10px;
+            font-size: 16px;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        section button{
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+        section span{
+            display: block;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        .good{
+            color: green;
+        }
+        .bad{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Zadania z bazą danych o wędkarzach</h1>
+        <p>Utwórz baze danych w <b>phpMyAdmin</b> i zaimportuj jej strukturę z pliku <b><i>wedkarstwo.sql</i></b></p>
+        <p>
+            <label for="dbName">Podaj nazwę bazy danych do której został zaimportowany <b><i>wedkarstwo.sql</i></b></label>
+            <input id="dbName" type="text" placeholder="nazwa twojej bazy danych">
+            <button>Zastosuj to bazę danych do testowania zapytań sql</button>
+        </p>
+    </section>
+    <section>
+        <h2>W zapytaniach wykorzystaj słowa kluczowe:</h2>
+        <ul>
+            <li><b>SELECT</b> - wybiera kolumny z tabeli</li>
+            <li><b>FROM</b> - wybiera tabelę z której pobierane są dane</li>
+            <li><b>WHERE</b> - określa warunki które muszą być spełnione aby rekord został wybrany</li>
+            <li><b>AND</b> - łączy warunki aby spełnione były oba</li>
+            <li><b>OR</b> - łączy warunki aby spełniony był przynajmniej jeden</li>
+            <li><b>LIKE</b> - określa warunek dla kolumny tekstowej</li>
+            <li><b>COUNT</b> - zlicza ilość rekordów</li>
+            <li><b>ORDER BY</b> - sortuje wyniki</li>
+            <li><b>GROUP BY</b> - grupuje wyniki</li>
+            <li><b>HAVING</b> - określa warunki dla grup</li>
+            <li><b>AS</b> - nadaje alias kolumnie</li>
+            <li><b>JOIN</b> - łączy dwie tabele na podstawie wartości w kolumnach deklarowane po <b>ON</b></li>
+            <li><b>LEFT JOIN</b> - łączy dwie tabele z lewej strony</li>
+            <li><b>RIGHT JOIN</b> - łączy dwie tabele z prawej strony</li>
+            <li><b>INNER JOIN</b> - łączy dwie tabele na podstawie wartości w kolumnach</li>
+            <li><b>UNION</b> - łączy wyniki z dwóch zapytań</li>
+        </ul>
+        <h2>Wykonaj poniższe zadania:</h2>
+    </section>
+    <section>
+        <h2>Zadanie 1</h2>
+        <label for="zadanie1"><p>Wyświetl wszystkie rekordy z tabeli <b><i>ryby</i></b></p></label>
+        <textarea name="zadanie1" id="zadanie1" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 2</h2>
+        <label for="zadanie2"><p>Wyświetl wszystkie rekordy z tabeli <b><i>ryby</i></b>, gdzie <b><i>waga</i></b> jest większa równe <b>2</b>kg</p></label>
+        <textarea name="zadanie2" id="zadanie2" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 3</h2>
+        <label for="zadanie3"><p>Wyświetl wszystkie rekordy z tabeli <b><i>ryby</i></b>, gdzie <b><i>waga</i></b> jest większa niż <b>0,5</b>kg i mniejsza niż <b>3,2</b>kg</p></label>
+        <textarea name="zadanie3" id="zadanie3" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 4</h2>
+        <label for="zadanie4"><p>Wyświetl wszystkie rekordy z tabeli <b><i>ryby</i></b>, gdzie waga jest większa niż <b>2</b> i mniejsza niż <b>4,9</b> oraz długość większa niż <b>20</b>:</p></label>
+        <textarea name="zadanie4" id="zadanie4" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 5</h2>
+        <label for="zadanie5"><p>Wyświetl wszystkie rekordy z tabeli <b><i>wedkarze</i></b> którzy posiadają nazwisko <b>Kowalski</b> i pochodzą z <b>Warszawy</b> lub <b>Gdyni</b></p></label>
+        <textarea name="zadanie5" id="zadanie5" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 6</h2>
+        <label for="zadanie6"><p>Wyświetl wszystkie rekordy z tabeli <b><i>wedkarze</i></b> którzy posiadają nazwisko <b>Kowalski</b> i pochodzą z <b>Radomia</b> lub <b>Olsztyna</b> oraz mają wiek większy niż <b>30</b> lat</p></label>
+        <textarea name="zadanie6" id="zadanie6" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 7</h2>
+        <label for="zadanie7"><p>Wyświetl wszystkie rekordy z tabeli <b><i>polowy</i></b> wybierając <b><i>imie</i></b> i <b><i>nazwisko</i></b> wedkarzy którzy łowili ryby w <u>rzekach</u> </p></label>
+        <textarea name="zadanie7" id="zadanie7" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 8</h2>
+        <label for="zadanie8"><p>Wyświetl wszystkie rekordy z tabeli <b><i>polowy</i></b> wybierając <b><i>imie</i></b> i <b><i>nazwisko</i></b> wedkarzy którzy wyłowili <b><u>minimum 3 ryby</u></b> oraz wyświetl ilość wyłowionych ryb nazywając kolumnę <b><i>ilosc_ryb</i></b></p></label>
+        <textarea name="zadanie8" id="zadanie8" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 9</h2>
+        <label for="zadanie9"><p>Wyświetl wszystkie rekord z tabeli <b><i>polowy</i></b> ilość wedkarzy którzy <i><u>nie wyłowili</u></i> ani jednej ryby kolumnę nazwij <b><i>pechowi_wedkarze</i></b></p></label>
+        <textarea name="zadanie9" id="zadanie9" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 10</h2>
+        <label for="zadanie10"><p>Wyświetl wszystkie rekordy z tabeli <b><i>polowy</i></b> wybierając <b><i>imie</i></b> i <b><i>nazwisko</i></b> wedkarzy którzy wyłowili ryby w dniu <b>2024-06-01</b></p></label>
+        <textarea name="zadanie10" id="zadanie10" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 11</h2>
+        <label for="zadanie11"><p>Wyświetl wszystkie rekordy z tabeli <b><i>polowy</i></b> wybierając <b><i>imie</i></b> i <b><i>nazwisko</i></b> wedkarzy którzy wyłowili ryby w dniu <b>2024-06-01</b> oraz wyświetl ilość wyłowionych ryb nazywając kolumnę <b><i>ilosc_ryb</i></b></p></label>
+        <textarea name="zadanie11" id="zadanie11" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+    <section>
+        <h2>Zadanie 12</h2>
+        <label for="zadanie12"><p>Wyświetl wszystkie rekordy z tabeli <b><i>ryby</i></b> których <b>nazwa</b> zaczyna się na literę <b><i>K</i></b> oraz w wyniku uwzglednij kolumnę <b><i>liczba_wystapien</i></b> w której zamieścisz ilość wyłowionych ryb o danej nazwie</p></label>
+        <textarea name="zadanie12" id="zadanie12" placeholder="wprowadź zapytanie SQL"></textarea>
+        <button>Sprawdź to zapytanie SQL</button>
+        <span></span>
+    </section>
+</body>
+<script>
+    const tasks = document.querySelectorAll("section");
+    tasks.forEach(task => {
+        const h2 = task.querySelector("h2");
+        const textarea = task.querySelector("textarea");
+        const button = task.querySelector("button");
+        const span = task.querySelector("span");
+        button.addEventListener("click", () => {
+            const sql = textarea.value;
+            const taskName = h2.textContent;
+            fetch("check.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({sql, taskName})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === "ok"){
+                    span.classList.remove("bad");
+                    span.classList.add("good");
+                    span.textContent = "Zapytanie SQL jest poprawne";
+                } else {
+                    span.classList.remove("good");
+                    span.classList.add("bad");
+                    span.textContent = "Zapytanie SQL jest niepoprawne";
+                }
+            })
+        })
+    })
+</script>
+</html>
